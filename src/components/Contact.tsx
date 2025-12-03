@@ -13,7 +13,7 @@ export default function Contact() {
       transition={{ duration: 0.8 }}
     >
       <h2 className="text-3xl font-bold mb-4 glow">Contact Me</h2>
-      <p className="text-gray-300 mb-6">Let's work together! Reach out via email:</p>
+      <p className="text-gray-300 mb-6">Let&apos;s work together! Reach out via email:</p>
       <motion.a
         href="mailto:ceo@anasnidir.com"
         className="px-8 py-3 bg-pink-500 glow rounded-lg hover:bg-pink-400 transition"
