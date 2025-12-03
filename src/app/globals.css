@@ -1,0 +1,120 @@
+/* src/app/globals.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-900 text-white transition-colors duration-500;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Text Glow */
+.glow {
+  text-shadow:
+    0 0 8px #00f0ff,
+    0 0 16px #00f0ff,
+    0 0 24px #00f0ff;
+}
+
+/* Glow for Buttons */
+button.glow {
+  box-shadow:
+    0 0 8px #ff00ff,
+    0 0 16px #ff00ff,
+    0 0 24px #ff00ff;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Liquid Glass Card / Section */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.06),
+    inset 0 0 18px rgba(255, 255, 255, 0.04);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background-color 0.35s ease;
+}
+
+/* Hover Effect for Liquid Glass */
+.liquid-glass:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow:
+    0 0 40px rgba(58,111,248,0.18),
+    inset 0 0 40px rgba(255, 255, 255, 0.06);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Optional Glass Border */
+.glass-border {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 1.5rem;
+}
+
+/* Hero gradient helper */
+.hero-bg {
+  background: linear-gradient(135deg, #0A1A3A 0%, #0F2557 50%, #1A3E8A 100%);
+}
+
+/* Scroll Down Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 44px;
+  border: 2px solid rgba(0, 255, 255, 0.25);
+  border-radius: 9999px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4px;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 6px;
+  height: 10px;
+  background: #00f0ff;
+  border-radius: 3px;
+  animation: scroll 1.2s infinite;
+}
+
+@keyframes scroll {
+  0%, 20% { transform: translateY(0); opacity: 0; }
+  50% { transform: translateY(12px); opacity: 1; }
+  100% { transform: translateY(24px); opacity: 0; }
+}
+
+/* Universal Link Hover Neon */
+a {
+  @apply transition-colors duration-300;
+}
+a:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 8px #00f0ff, 0 0 16px #00f0ff;
+}
+
+/* Responsive Liquid Glass Performance */
+@media (max-width: 640px) {
+  .liquid-glass {
+    backdrop-filter: blur(12px) saturate(150%);
+  }
+  .glow {
+    text-shadow: 0 0 6px #00f0ff, 0 0 12px #00f0ff;
+  }
+  button.glow {
+    box-shadow: 0 0 6px #ff00ff, 0 0 12px #ff00ff;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
